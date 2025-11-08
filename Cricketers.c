@@ -13,12 +13,6 @@ struct CricketPlayers{
     float economy;
 };
 
-void addPlayer();
-void displayPlayers();
-void searchPlayer();
-void deletePlayer();
-void updatePlayer();
-
 
 int main(){
     int choice;
