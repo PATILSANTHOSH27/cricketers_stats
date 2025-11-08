@@ -17,7 +17,7 @@ void addPlayer();
 void displayPlayers();
 void searchPlayer();
 void deletePlayer();
-void updateData();
+void updatePlayer();
 
 
 int main(){
@@ -205,7 +205,7 @@ void deletePlayer(){
 }
 
 
-void updateData(){
+void updatePlayer(){
     FILE *fp;
     FILE *temp;
 
