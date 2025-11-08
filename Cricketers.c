@@ -48,7 +48,7 @@ int main(){
                 deletePlayer();
                 break;
             case 5:
-                updateData();
+                updatePlayer();
                 break;
             case 6:
                 printf("Exiting......");
