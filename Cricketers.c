@@ -13,6 +13,52 @@ struct CricketPlayers{
     float economy;
 };
 
+void addPlayer();
+void displayPlayers();
+void searchPlayer();
+void deletePlayer();
+void updatePlayer();
+
+
+int main(){
+    int choice;
+
+    while(1){
+        printf("------ Cricketers Stats ------ \n");
+        printf("1.Add New Player \n");
+        printf("2.Display All Players \n");
+        printf("3.Search Player by Jersey number \n");
+        printf("4.Delete Player by Jersey number \n");
+        printf("5.Update Players Stats by Jersey Number \n");
+        printf("6.Exit \n");
+        printf("Enter your choice : ");
+        scanf("%d",&choice);
+
+        switch(choice){
+            case 1:
+                addPlayer();
+                break;
+            case 2:
+                displayPlayers();
+                break;
+            case 3:
+                searchPlayer();
+                break;
+            case 4:
+                deletePlayer();
+                break;
+            case 5:
+                updatePlayer();
+                break;
+            case 6:
+                printf("Exiting......");
+                exit(0);
+            default:
+                printf("Invalid Choice!Enter valid Choice");
+        }
+    }
+}
+
 void addPlayer(){
     FILE *fp;
 
@@ -52,7 +98,7 @@ void addPlayer(){
 
     printf("Player Added Successfully !\n");
 }
-
+ 
 
 void displayPlayers(){
     FILE *fp;
@@ -82,7 +128,7 @@ void searchPlayer(){
     FILE *fp;
 
     struct CricketPlayers c;
-
+    
     int jerseyno,found = 0;
 
     fp = fopen("Cricketers.txt","r");
@@ -117,7 +163,7 @@ void deletePlayer(){
     FILE *fp, *temp;
     struct CricketPlayers c;
     int jerseyno, found = 0;
-
+    
     fp = fopen("Cricketers.txt", "r");
     temp = fopen("temp.txt", "w");
 
@@ -211,44 +257,4 @@ void updatePlayer(){
 
     remove("Cricketers.txt");
     rename("temp.txt","Cricketers.txt");
-}
-
-
-int main(){
-    int choice;
-
-    while(1){
-        printf("------ Cricketers Stats ------ \n");
-        printf("1.Add New Player \n");
-        printf("2.Display All Players \n");
-        printf("3.Search Player by Jersey number \n");
-        printf("4.Delete Player by Jersey number \n");
-        printf("5.Update Players Stats by Jersey Number \n");
-        printf("6.Exit \n");
-        printf("Enter your choice : ");
-        scanf("%d",&choice);
-
-        switch(choice){
-            case 1:
-                addPlayer();
-                break;
-            case 2:
-                displayPlayers();
-                break;
-            case 3:
-                searchPlayer();
-                break;
-            case 4:
-                deletePlayer();
-                break;
-            case 5:
-                updatePlayer();
-                break;
-            case 6:
-                printf("Exiting......");
-                exit(0);
-            default:
-                printf("Invalid Choice!Enter valid Choice");
-        }
-    }
 }
